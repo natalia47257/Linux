@@ -1,0 +1,6 @@
+
+  997  touch test.txt
+  998  chmod u+x,o-r test.txt
+ 1003  ps -ef >> ps.txt
+ 1009  ps -ef | tail -n +2 | wc -l >> ps.txt
+ 
