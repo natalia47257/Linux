@@ -1,15 +1,14 @@
-#!/bin/bash
-#for i in {1..10}
-#do
-#date +%T
-#ps -ef | wc -l
-#sleep 5
-#done
-cat /proc/cpuinfo > f.txt
-cat /etc/os-release
-grep "NAME=" /etc/os-release > f1.txt
-grep "NAME=" /etc/os-release | cut -d= -f2 | > f1.txt
-for i in {1..50}
-do
-touch $i.txt
-done
+1 #!/bin/bash
+2 for start in {0..10}
+3 do
+4 date +'%H:%M:%S'
+5 sleep 0.1
+6 done
+7 ps -ef | tail +2 | wc -l
+8 cat /proc/cpuinfo > file.txt
+9 cat /etc/os-release | head -1 | sed 's/"/ /g' >> file.txt
+10 cat /etc/os-release | head -1 | sed 's/"/ /g' | awk '{print$2}' >> file.txt
+11 for files in {50..100}
+12 do
+13 touch $files.txt
+14 done         
